@@ -166,7 +166,7 @@ def predict():
     class_dictionary = np.load('class_indices.npy').item()
 
     num_classes = len(class_dictionary)
-    '''
+  
     # add the path to your test image below
     cam = cv2.VideoCapture(0)   # 0 -> index of camera
     cam.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
@@ -190,7 +190,7 @@ def predict():
     test_image = np.expand_dims(test_image, axis = 0)
     # important! otherwise the predictions will be '0'
     '''
-    '''
+    
     test_image = test_image / 255
     
     # build the VGG16 network
@@ -225,14 +225,14 @@ def predict():
 
     # display the predictions with the image
     
-    #cv2.putText(img, "Predicted: {}".format(label), (10, 30),
+    cv2.putText(img, "Predicted: {}".format(label), (10, 30),
                # cv2.FONT_HERSHEY_PLAIN, 1.5, (43, 99, 255), 2)
 
-    #cv2.imshow("Classified Image", img)
-    #cv2.waitKey(0)
-    #cv2.destroyAllWindows()
-    #cam = cv2.VideoCapture(1)
-    #cam.release()
+    cv2.imshow("Classified Image", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    cam = cv2.VideoCapture(1)
+    cam.release()
     
     
 def prog_close():
